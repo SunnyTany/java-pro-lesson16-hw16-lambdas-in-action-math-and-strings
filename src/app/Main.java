@@ -1,6 +1,15 @@
 package app;
 
+/**
+ * Main entry point of the application.
+ * Orchestrates the execution of functional programming demonstrations.
+ */
 public class Main {
+    /**
+     * Executes the lambda and functional interface demonstration scenario.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         System.out.printf("=== Lambdas in Action: Math and Strings ===%n%n");
 
@@ -9,12 +18,11 @@ public class Main {
         try {
             demoService.demoAnonymousClass();
             demoService.demoLambdaExpression();
-            demoService.demoMethodReference();
+            demoService.demoNonStaticMethodReference();
+            demoService.demoStaticMethodReference();
             demoService.demoSupplier();
         } catch (IllegalArgumentException e) {
-            System.err.printf("Error during execution: %s%n", e.getMessage());
-        } catch (Exception e) {
-            System.err.printf("An unexpected error occurred: %s%n", e.getMessage());
+            System.err.printf("Error during execution (Invalid Argument): %s%n", e.getMessage());
         }
     }
 }
